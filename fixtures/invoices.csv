@@ -1,0 +1,8 @@
+invoice_id,customer,currency,amount
+INV-1,Acme,CAD,0.30
+INV-2,Maple,CAD,100.00
+INV-3,West,CAD,50.00
+INV-4,East,CAD,20.00
+INV-5,No-charge,CAD,0.00
+DUP,Duplicate,CAD,5.00
+DUP,Duplicate,CAD,5.00

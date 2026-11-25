@@ -1,0 +1,18 @@
+name: Native tests
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install runtime
+        run: sudo apt-get update && sudo apt-get install -y php-cli
+      - name: Run native tests
+        run: |
+          php -l src/Reconciler.php
+          php -l reconcile.php
+          php tests/run.php
+          php reconcile.php fixtures/invoices.csv fixtures/payments.csv > actual.json
